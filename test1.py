@@ -1,0 +1,6 @@
+nombre = input("¿Cual es tu nombre?: \n")
+print(f"Bienvenido {nombre}")
+ventas = int(input("Por favor ingresa el valor de ventas: \n"))
+comision = round(ventas * 0.13,2)
+print(f"Ok {nombre}, has vendido por una cantidad de ${ventas}. ¡Grandioso!")
+print(f"El monto total de tus comisiones es de ${comision}. ¡Sigue así!")
