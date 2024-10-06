@@ -1,3 +1,5 @@
+from random import *
+
 ##################################
 #########OPS COMPARADORES#########
 
@@ -147,3 +149,95 @@ for numero in lista_numeros:
         
 print(f"La suma de los números pares es: {suma_pares}")
 print(f"La suma de los números impares es: {suma_impares}")
+
+######################################################
+#####################ZIP##############################
+
+#Junta listas entrelazandolas, las convierte en tuples
+
+nombre = ["ana", "hugo", "valeria"]
+edades = [54,34,22]
+ciudades = ["lima", "caracas", "madrid"]
+
+#Debe estar casteado como lista
+combinade = list(zip(nombres, edades, ciudades))
+
+#combinación de loop con zip
+for nombre, edad, ciudad in combinade:
+    print(f"{nombre} tiene {edad} años y vive en {ciudad}.")
+    
+#########################################################
+################MIN - MAX###############################
+
+#Detectan valores bajos y altos
+
+menor = min(58,95,45,44,36) #busca el numero mas bajo
+mayor = max(58,95,45,44,36) #busca el numero mas alto
+
+lista22 = [58,41,64,99,441,15]
+#print(max(lista22))
+print(f"El menor es {min(lista22)} y el mayor es {max(lista22)}") #implementa print con la funcion
+
+nombres02 = ["juan", "pablo", "carlos"] #tambien con strings pero los ordena alfabéticamente
+print(min(nombres02))
+
+nombre01 = "Carlos" #Busca primero la letras mayuscula, si esta todo en minuscula buscará el orden alfabético
+print(min(nombre01))
+
+diccionario99 = {"C1":45, "C2":11}
+print(min(diccionario99)) #busca el valor mas bajo a nivel de claves
+print(min(diccionario99.values())) #busca el valor mas bajo a nivel de valores
+
+#################################################
+##################RANDINT#########################
+
+#significa RANDOM INTEGER
+
+aleatorio = randint(1, 50) #integer random
+print(aleatorio)
+
+aleatorio2 = round(uniform(1, 5),2) #con decimales random, se usa "round" para definir cuantos decimales
+print(aleatorio2)
+
+aleatorio3 = random() #no se pone nada, busca entre 0 y 1
+print(aleatorio3)
+
+colores = ["azul", "rojo", "verde", "amarillo"]
+aleatorio4 = choice(colores) #con listas
+print(aleatorio4)
+
+numerosrr = list(range(5,100,5))
+shuffle(numerosrr) #combina todo de forma aleatoria de una lista LISTA
+print(numerosrr)
+
+################################################
+#############COMPRENSION DE LISTAS##############
+
+palabra22 = "python"
+
+lista22 = []
+
+for letra in palabra22:
+    lista22.append(letra)
+    
+print(lista22)
+############################### todo esto puede ser hecho de mejor forma
+
+palabra23 = "python"
+
+lista23 = [letra for letra in palabra23] #re incomodo esto
+
+print(lista23)
+
+listanum = [numero for numero in range(0,21,3)]
+print(listanum)
+
+esquizo = [n / 2 for n in range(0,21,2)] #esto se supone que va de 2 en 2 hasta el 20 pero lo que se verá es la división de cada numero entre 2
+print(esquizo)
+
+esquizo2 = [n if n * 2 > 10 else 'no' for n in range(0,21,2) ] #Aca tomara en cuenta los numeros que al multiplicarlos por 2 sean mayor que 10, los otros los pondra 'no'... no tiene sentido pero es logico
+print(esquizo2)
+
+pies = [10,20,30,40,50]
+metros = [round(p / 3.281 , 2) for p in pies] #uso round para fijar 2 decimales
+print(metros)
