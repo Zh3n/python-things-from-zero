@@ -79,16 +79,71 @@ elif mascota == "perro": ##segunda
 else: ##opcion final
     print("No tienes un gato")
     
-#########################################
+habla_ingles = True
+sabe_python = False
+
+if habla_ingles and sabe_python:
+    print("Cumples con los requisitos para postularte")
+elif (not habla_ingles) and (not sabe_python):
+    print("Para postularte, necesitas saber programar en Python y tener conocimientos de inglés")
+elif not habla_ingles:
+    print("Para postularte, necesitas tener conocimientos de inglés")
+else:
+    print("Para postularte, necesitas saber programar en Python")
+    
+
+serie = "N-01"
+
+#if serie == "N-02":
+#    print("Samsung")
+#elif serie == "N-01":
+#    print("Nokia")
+#elif serie == "N-03":
+#    print("Motorola")
+#else:
+#    print("No existe este producto")
+
+match serie:
+    case "N-02":
+        print("Samsung")
+    case "N-01":
+        print("Nokia")
+    case "N-03":
+        print("Motorola")
+    case _:
+        print("No existe este producto")
+
+cliente9 = {"nombre":"Federico", "edad": 45, "ocupacion":"instructor"}
+
+pelicula = {"pelicula":"Matrix", "ficha_tecnica": {"protagonista":"Keany Reeves", "director":"Lana y Lilly"}}
+
+elementos = [cliente9, pelicula, 'libro']
+
+for e in elementos:
+    match e:
+        case {'nombre': nombre,
+              'edad': edad,
+              'ocupacion': ocupacion}:
+            print('es un cliente')
+            print(nombre, edad, ocupacion)
+        case {'titulo': titulo,
+              'ficha_tecnica}':{'protagonista': protagonista,
+                                'director': director}}:
+            print('Es una pelicula')
+            print(titulo, protagonista, director)
+        case _:
+            print('no se que es esto')
+
+########################################
 ################LOOPS####################
 
 #si quiero imprimir, por ejemplo, un "Hola" por cada elemento de una listA:
 
-nombres = ["Juan", "Ana", "Carlos", "Fran"]
+nombres66 = ["Juan", "Ana", "Carlos", "Fran"]
 
 #diría "por cada nombre imprimir hola" lo cual se traduce como
 
-for element in nombres:
+for element in nombres66:
     print("Hola " + element)
     
 #en este caso "element" es una variable interna creada y usada para referirse a dichos elementos, pero podria usar cualquier otra
@@ -155,12 +210,12 @@ print(f"La suma de los números impares es: {suma_impares}")
 
 #Junta listas entrelazandolas, las convierte en tuples
 
-nombre = ["ana", "hugo", "valeria"]
+nombre000 = ["ana", "hugo", "valeria"]
 edades = [54,34,22]
 ciudades = ["lima", "caracas", "madrid"]
 
 #Debe estar casteado como lista
-combinade = list(zip(nombres, edades, ciudades))
+combinade = list(zip(nombre000, edades, ciudades))
 
 #combinación de loop con zip
 for nombre, edad, ciudad in combinade:
@@ -241,3 +296,4 @@ print(esquizo2)
 pies = [10,20,30,40,50]
 metros = [round(p / 3.281 , 2) for p in pies] #uso round para fijar 2 decimales
 print(metros)
+
