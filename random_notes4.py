@@ -375,3 +375,7 @@ def bastaya(numero):
     return len(primos)
 
 print(bastaya(50))
+
+
+#Dios aun no entiendo bien las funciones jaja
+#
